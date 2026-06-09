@@ -1,0 +1,40 @@
+<div class="acervo-container">
+  <header class="acervo-header">
+    <h1>Explore nossa biblioteca</h1>
+  </header>
+
+  <div class="filtros-container">
+    <input type="text" class="input-pesquisa" [(ngModel)]="termoPesquisa"
+      placeholder="Pesquisar por título ou autor...">
+
+    <select class="select-filtro" [(ngModel)]="categoriaSelecionada">
+      <option value="">Todas as Categorias</option>
+      <option *ngFor="let cat of categoriasUnicas" [value]="cat">{{ cat }}</option>
+    </select>
+  </div>
+
+  <main class="grid-livros">
+    <div class="card-livro" *ngFor="let livro of livrosFiltrados">
+      <div class="capa-livro">
+        <img [src]="livro.capaUrl" [alt]="livro.titulo">
+      </div>
+
+      <div class="info-livro">
+        <h3 class="titulo">{{ livro.titulo }}</h3>
+        <p class="autor">{{ livro.autor }}</p>
+
+        <div *ngIf="meusProgressos[livro.id]" class="badge-progresso">
+          <p>📖 Pág: {{ meusProgressos[livro.id] }}</p>
+        </div>
+
+        <button class="btn-ler" [ngClass]="{'btn-continuar': meusProgressos[livro.id]}"
+          [routerLink]="['/leitor', livro.id]"
+          [state]="{ pagina: meusProgressos[livro.id] || 1, titulo: livro.titulo }">
+          {{ meusProgressos[livro.id] ? 'Continuar Leitura' : 'Ler Online' }}
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,38 @@
+<nav class="navbar">
+    <a routerLink="/" class="nav-brand">📚 Acervo Digital</a>
+
+    <div class="nav-menu">
+        <div class="seletor-temas">
+            <button class="btn-tema" (click)="aplicarTema('claro')" title="Modo Claro">☀️</button>
+            <button class="btn-tema" (click)="aplicarTema('sepia')" title="Modo Sépia">📜</button>
+            <button class="btn-tema" (click)="aplicarTema('escuro')" title="Modo Escuro">🌙</button>
+        </div>
+
+        <div *ngIf="(usuario$ | async) as user" class="user-profile">
+            <div class="user-info">
+                <p>{{ user.email }}</p>
+                <small>Via: {{ getProvedor(user) }}</small>
+            </div>
+            <button (click)="logout()" class="btn-sair">Sair</button>
+        </div>
+
+        <ng-template #loginButton>
+            <button class="btn-login" routerLink="/login">Entrar</button>
+        </ng-template>
+
+        <button class="btn-menu-lateral" (click)="toggleMenu()">
+            ☰ <span>Menu</span>
+        </button>
+    </div>
+</nav>
+
+<div class="overlay" *ngIf="menuAberto" (click)="fecharMenu()"></div>
+
+<aside class="sidebar" [class.aberto]="menuAberto">
+    <button class="btn-fechar" (click)="fecharMenu()">✖</button>
+    <ul class="sidebar-links">
+        <li><a routerLink="/" (click)="fecharMenu()">🏠 Início</a></li>
+        <li><a routerLink="/acervo" (click)="fecharMenu()">📚 Explorar Acervo</a></li>
+        <li><a routerLink="/login" (click)="fecharMenu()">🔑 Entrar / Cadastrar</a></li>
+    </ul>
+</aside>

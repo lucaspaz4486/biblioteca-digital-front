@@ -1,0 +1,106 @@
+.acervo-footer {
+  padding: 4rem 2rem 2rem;
+  background-color: var(--bg-card);
+  text-align: center;
+  border-top: 1px solid var(--border-cor);
+  margin-top: 4rem;
+}
+
+.footer-header h2 {
+  color: var(--text-heading);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.contato-card {
+  background-color: var(--bg-main);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contato-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.icon-circle {
+  width: 65px;
+  height: 65px;
+  background-color: var(--bg-card);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.contato-card h4 {
+  font-size: 1.3rem;
+  color: var(--text-heading);
+  margin: 0 0 0.5rem 0;
+}
+
+.contato-card p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0 0 2rem 0;
+  flex-grow: 1;
+}
+
+.btn-outline {
+  display: inline-block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--text-heading);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--text-heading);
+  color: var(--bg-main);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-cor);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #bdc3c7;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.logo-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}

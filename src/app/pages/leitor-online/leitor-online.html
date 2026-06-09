@@ -1,0 +1,35 @@
+<div class="leitor-container" #leitorWrapper [class.modo-tela-cheia]="isFullscreen">
+
+  <header class="leitor-header" *ngIf="!isFullscreen">
+    <button class="btn-voltar" (click)="voltar()">← Voltar</button>
+    <h2>{{ livroTitulo }}</h2>
+  </header>
+
+  <nav class="toolbar-leitor">
+    <div class="bloco-paginacao">
+      <button class="btn-acao" (click)="paginaAnterior()" [disabled]="paginaAtual <= 1">Anterior</button>
+
+      <div>
+        Página
+        <input type="number" class="input-pagina" [(ngModel)]="paginaAtual" (change)="validarPagina()">
+        de {{ totalPaginas }}
+      </div>
+
+      <button class="btn-acao" (click)="proximaPagina()" [disabled]="paginaAtual >= totalPaginas">Próxima</button>
+    </div>
+
+    <div class="bloco-acoes">
+      <div class="relogio">{{ horaAtual }}</div>
+      <button class="btn-acao btn-salvar" (click)="salvarMarcaPagina()">Salvar</button>
+      <button class="btn-acao" (click)="toggleFullscreen()">
+        {{ isFullscreen ? '🗗 Sair' : '⛶ Tela Cheia' }}
+      </button>
+    </div>
+  </nav>
+
+  <main class="pdf-wrapper">
+    <pdf-viewer [src]="pdfSrc" [original-size]="false" [page]="paginaAtual"
+      (after-load-complete)="aposCarregarPdf($event)" class="pdf-canvas">
+    </pdf-viewer>
+  </main>
+</div>

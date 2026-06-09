@@ -1,0 +1,128 @@
+.acervo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--text-main);
+}
+
+.acervo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.acervo-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.acervo-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.filtros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-cor);
+}
+
+.input-pesquisa, .select-filtro {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border-cor);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.input-pesquisa {
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+.grid-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card-livro {
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-cor);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-livro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.capa-livro {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capa-livro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-progresso {
+  background-color: var(--btn-principal);
+  color: var(--btn-texto);
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.info-livro {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.info-livro .titulo {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-heading);
+}
+
+.info-livro .autor {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.btn-ler {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--btn-principal);
+  color: var(--btn-texto);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-continuar {
+  background-color: #e74c3c !important;
+  color: white;
+}

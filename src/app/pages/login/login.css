@@ -1,0 +1,167 @@
+.auth-container {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid var(--border-cor);
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-cor);
+  background-color: var(--bg-main);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.2rem;
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  color: var(--btn-principal);
+  background-color: var(--bg-card);
+  border-bottom: 3px solid var(--btn-principal);
+}
+
+.auth-form {
+  padding: 2.5rem 2rem;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h2 {
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-cor);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--btn-principal);
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--btn-principal);
+  color: var(--btn-texto);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-submit:disabled {
+  background-color: var(--border-cor);
+  cursor: not-allowed;
+}
+
+.social-login-section {
+  margin-top: 2rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-cor);
+}
+
+.divider span {
+  padding: 0 10px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.btn-social {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-cor);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -57,3 +57,62 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📚 Acervo Digital
+O Acervo Digital é uma biblioteca web focada em acessibilidade e experiência de leitura, permitindo que usuários explorem grandes clássicos da literatura com suporte a temas dinâmicos (Claro, Sépia e Escuro) e salvamento de progresso de leitura em nuvem.
+
+🚀 Funcionalidades Principais
+Autenticação Segura: Login via E-mail/Senha ou Google utilizando Firebase Auth.
+
+Modos de Leitura: Alternância dinâmica de temas (Claro, Escuro e Sépia) com filtros automáticos para PDFs.
+
+Progresso em Nuvem: Marca-páginas persistente que salva a página atual diretamente no Firestore.
+
+Interface Responsiva: Design minimalista e organizado, otimizado para desktop e mobile.
+
+Busca Inteligente: Filtragem de livros por autor, categoria e título.
+
+🛠 Tecnologias Utilizadas
+Este projeto foi desenvolvido utilizando as tecnologias mais modernas do ecossistema Angular:
+
+Frontend: Angular 17+ (Standalone Components).
+
+Estilização: CSS puro com variáveis globais (Design System).
+
+Backend/Database: Firebase (Auth & Firestore).
+
+Leitor de PDF: ng2-pdf-viewer.
+
+Gerenciamento de Estado: RxJS.
+
+📦 Como rodar o projeto
+Clone o repositório:
+Bash
+git clone https://github.com/seu-usuario/biblioteca-digital.git
+cd biblioteca-digital-front
+Instale as dependências:
+
+Bash
+npm install
+Configure o ambiente:
+Crie o arquivo src/environments/environment.ts e insira suas credenciais do Firebase:
+
+TypeScript
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_PROJETO.firebaseapp.com",
+    projectId: "SEU_PROJETO",
+    storageBucket: "SEU_PROJETO.appspot.com",
+    messagingSenderId: "ID",
+    appId: "ID"
+  }
+};
+Inicie o servidor de desenvolvimento:
+
+Bash
+ng serve
+Acesse http://localhost:4200 no seu navegador.
+
+👤 Autor
+Lucas Da Silva Paz

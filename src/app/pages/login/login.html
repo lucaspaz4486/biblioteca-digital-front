@@ -1,0 +1,80 @@
+<div class="auth-container">
+  <div class="auth-card">
+
+    <div class="auth-tabs">
+      <button class="tab-btn" [class.active]="isLoginMode" (click)="toggleMode('login')">
+        Entrar
+      </button>
+      <button class="tab-btn" [class.active]="!isLoginMode" (click)="toggleMode('cadastro')">
+        Cadastrar
+      </button>
+    </div>
+
+    <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="auth-form fade-in">
+      <div class="form-header">
+        <h2>Bem-vindo de volta!</h2>
+        <p>Acesse sua conta para continuar lendo.</p>
+      </div>
+
+      <div class="input-group">
+        <label for="login-email">E-mail</label>
+        <input id="login-email" type="email" formControlName="email" placeholder="seu@email.com">
+        <span class="error-msg" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          Insira um e-mail válido.
+        </span>
+      </div>
+
+      <div class="input-group">
+        <label for="login-senha">Senha</label>
+        <input id="login-senha" type="password" formControlName="senha" placeholder="••••••••">
+        <span class="error-msg" *ngIf="loginForm.get('senha')?.invalid && loginForm.get('senha')?.touched">
+          Senha inválida.
+        </span>
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="loginForm.invalid">Entrar na Conta</button>
+
+      <div class="social-login-section">
+        <div class="divider"><span>ou continue com</span></div>
+        <button type="button" class="btn-social btn-google" (click)="loginComGoogle()">
+          <img src="/logo-gmail.png" alt="Google" class="social-icon">
+          Google
+        </button>
+      </div>
+    </form>
+
+    <form *ngIf="!isLoginMode" [formGroup]="cadastroForm" (ngSubmit)="onSubmitCadastro()" class="auth-form fade-in">
+      <div class="form-header">
+        <h2>Crie sua conta</h2>
+        <p>Junte-se à nossa biblioteca digital.</p>
+      </div>
+
+      <div class="input-group">
+        <label for="cad-nome">Nome Completo</label>
+        <input id="cad-nome" type="text" formControlName="nome" placeholder="Seu nome">
+        <span class="error-msg" *ngIf="cadastroForm.get('nome')?.invalid && cadastroForm.get('nome')?.touched">
+          Nome é obrigatório.
+        </span>
+      </div>
+
+      <div class="input-group">
+        <label for="cad-email">E-mail</label>
+        <input id="cad-email" type="email" formControlName="email" placeholder="seu@email.com">
+        <span class="error-msg" *ngIf="cadastroForm.get('email')?.invalid && cadastroForm.get('email')?.touched">
+          E-mail inválido.
+        </span>
+      </div>
+
+      <div class="input-group">
+        <label for="cad-senha">Senha</label>
+        <input id="cad-senha" type="password" formControlName="senha" placeholder="Crie uma senha segura">
+        <span class="error-msg" *ngIf="cadastroForm.get('senha')?.invalid && cadastroForm.get('senha')?.touched">
+          Mínimo de 6 caracteres.
+        </span>
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="cadastroForm.invalid">Criar Conta</button>
+    </form>
+
+  </div>
+</div>

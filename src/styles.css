@@ -1,1 +1,125 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   0. RESET GLOBAIS E VARIÁVEIS DE TEMA
+   ========================================================================== */
+:root {
+  /* Tema Padrão (Claro) */
+  --bg-main: #ffffff;
+  --bg-card: #ffffff;
+  --text-main: #333333;
+  --text-heading: #2c3e50;
+  --border-cor: #e1e8ed;
+  --btn-principal: #3498db;
+  --btn-texto: #ffffff;
+}
+
+.tema-escuro {
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-heading: #f5f6fa;
+  --border-cor: #333333;
+  --btn-principal: #bb86fc;
+  --btn-texto: #000000;
+}
+
+.tema-sepia {
+  --bg-main: #f4ecd8;
+  --bg-card: #fdf6e3;
+  --text-main: #433422;
+  --text-heading: #2c2114;
+  --border-cor: #d9cba4;
+  --btn-principal: #8b5e3c;
+  --btn-texto: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ==========================================================================
+   1. NAVBAR E ELEMENTOS GLOBAIS
+   ========================================================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: var(--bg-card);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-cor);
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   2. SIDEBAR
+   ========================================================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border-cor);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  padding: 2rem;
+}
+
+.sidebar.aberto {
+  right: 0;
+}
+
+.sidebar-links a {
+  color: var(--text-heading);
+  font-weight: 600;
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3. FILTROS DE LEITURA (PDF)
+   ========================================================================== */
+/* Aplicamos o filtro na classe do componente para evitar conflitos visuais */
+body.tema-escuro pdf-viewer {
+  filter: invert(90%) hue-rotate(180deg) contrast(90%);
+}
+
+body.tema-sepia pdf-viewer {
+  filter: sepia(40%) contrast(90%) brightness(95%);
+}
+
+/* ==========================================================================
+   4. TIPOGRAFIA GERAL
+   ========================================================================== */
+h1, h2, h3, h4 {
+  color: var(--text-heading);
+  transition: color 0.2s ease;
+}
+
+a {
+  color: var(--btn-principal);
+  cursor: pointer;
+}

@@ -1,0 +1,92 @@
+/* Container de perfil */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.user-info p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-heading);
+}
+
+.user-info small {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* Botão Sair */
+.btn-sair {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.btn-sair:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Botão Login */
+.btn-login {
+  background-color: var(--btn-principal);
+  color: var(--btn-texto);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Container do menu na Navbar */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.btn-menu-lateral {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--btn-principal);
+  color: var(--btn-texto);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.seletor-temas {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  white-space: nowrap;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .nav-menu {
+    gap: 0.5rem;
+  }
+
+  .btn-menu-lateral span {
+    display: none;
+  }
+}

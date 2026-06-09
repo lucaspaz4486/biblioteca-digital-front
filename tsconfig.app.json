@@ -1,16 +1,31 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+/* ==========================================================================
+   CONFIGURAÇÃO DO TYPESCRIPT PARA O APLICATIVO (APP)
+   Este arquivo herda as regras gerais do tsconfig.json (na raiz do projeto)
+   e aplica regras específicas apenas para o código-fonte da aplicação.
+========================================================================== */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    
+    /* Define a pasta de saída para os arquivos compilados.
+       Nota: Nas versões mais recentes do Angular (com esbuild), o build 
+       ocorre na memória durante o desenvolvimento, mas esta regra mantém 
+       a compatibilidade com a estrutura tradicional. */
     "outDir": "./out-tsc/app",
+    
+    /* Permite que o TypeScript reconheça tipos nativos do ambiente Node.js */
     "types": [
       "node"
     ]
   },
+  
+  /* Diz ao compilador para ler todos os arquivos TypeScript dentro de src/ */
   "include": [
     "src/**/*.ts"
   ],
+  
+  /* Ignora os arquivos de teste na hora de compilar o aplicativo final 
+     para que eles não pesem no código de produção. */
   "exclude": [
     "src/**/*.spec.ts"
   ]

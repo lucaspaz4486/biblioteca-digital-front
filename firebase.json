@@ -1,0 +1,21 @@
+{
+  "hosting": {
+    "public": "dist/biblioteca-digital-front/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [{
+      "source": "**/*.mjs",
+      "headers": [{
+        "key": "Content-Type",
+        "value": "application/javascript"
+      }]
+    }],
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }]
+  }
+}

@@ -1,0 +1,53 @@
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS DE TEMA (Design System)
+   ========================================================================== */
+
+/* 1. TEMA CLARO (Padrão) */
+:root {
+    --bg-main: #ffffff;
+    --bg-card: #f8f9fa;
+    --text-main: #333333;
+    --text-heading: #2c3e50;
+    --border-cor: #e1e8ed;
+    --btn-principal: #3498db;
+    --btn-texto: #ffffff;
+}
+
+/* 2. TEMA ESCURO */
+.tema-escuro {
+    --bg-main: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-heading: #ffffff;
+    --border-cor: #333333;
+    --btn-principal: #63b3ed;
+    --btn-texto: #1a202c;
+}
+
+/* 3. TEMA SÉPIA */
+.tema-sepia {
+    --bg-main: #f4ecd8;
+    --bg-card: #fdf6e3;
+    --text-main: #5b4636;
+    --text-heading: #2c2114;
+    --border-cor: #d9cba4;
+    --btn-principal: #8c6b3e;
+    --btn-texto: #ffffff;
+}
+
+/* ==========================================================================
+   ESTILOS GLOBAIS
+   ========================================================================== */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Garante que links não fiquem com sublinhados indesejados */
+a {
+    text-decoration: none;
+    color: inherit;
+}
